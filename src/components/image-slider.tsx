@@ -10,7 +10,6 @@ export const ImageSlider = (props: ImageSliderProps) => {
   const [imagesToDisplay, setImages] = useState<ReactElement<any, any>[]>([]);
   useEffect(() => {
     setImages(getImageElements());
-    console.log(imagesToDisplay);
   }, [props.images]);
 
   const getImageElements = (): ReactElement<any, any>[] => {
@@ -22,7 +21,7 @@ export const ImageSlider = (props: ImageSliderProps) => {
             <img
               src={image}
               alt="could not render"
-              className="max-h-[350px] max-w-[350px] rounded-md"
+              className="max-h-[350px] max-w-[350px] rounded-lg"
             />
           </div>
         );
@@ -45,7 +44,6 @@ export const ImageSlider = (props: ImageSliderProps) => {
               infiniteLoop={true}
               animationHandler={'fade'}
               transitionTime={2000}
-              interval={2000}
             >
               {imagesToDisplay}
             </Carousel>
